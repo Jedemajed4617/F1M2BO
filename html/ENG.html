@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rijksmuseum Online</title>
+    <link rel="stylesheet" href="../Style/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="../js/main.js" defer></script>
+    <script src="../js/ENG.js" defer></script>
+    <link rel="icon" type="image/x-icon" href="../img/icon.jpg">
+</head>
+
+    <body id="js--body">
+        
+        <header id="header" class="header">
+            <h1 class="headerTitle" class="noselect">
+                <a class="headerTitleLink" href="#headernl">Rijksmuseum Online</a>
+            </h1>
+
+            <div class="dropdown">
+                <button class="dropbtn">Language
+                  <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="../html/ENG.html">English</a>
+                    <a href="../html/index.html">Dutch</a>
+                </div>
+            </div>
+
+            <button id="js--menu" class="headerButton" class="noselect">Menu</button>
+        </header>
+
+        <nav id="js--nav" class="mainNav">
+            <ul class="mainNavList">
+                <li  class="mainNavListItem" onclick="closeNav()">
+                    <a href="#header">Home</a>
+                </li>
+                <li  class="mainNavListItem">
+                    <a href="#scrollGes" onclick="closeNav()">History</a>
+                </li>
+                <li  class="mainNavListItem">
+                    <a href="https://www.rijksmuseum.nl/en/login">Login</a>
+                </li>
+                <li  class="mainNavListItem" onclick="closeNav()">
+                    <a href="#reviewscroll">Reviews</a>
+                </li>
+                <li id="js--nav.close" class="mainNavListItem" onclick="closeNav()">
+                    Close
+                </li>
+
+            </ul>
+        </nav>
+
+        <main>
+
+        <figure class="bigFigure">
+            <img src="../img/Front-img.landingspage.jpg" alt="Foto van Rijksmuseum van de voorkant van het gebouw.">
+        </figure>
+        
+        <section class="collections">
+            
+            <script>
+                AOS.init();
+            </script>
+            
+            <h2 class="collectionsTitle" class="noselect">Collections</h2>
+        
+            <ul class="collectionsList">
+                <li class="collectionsListItem">
+                    <img src="../img/painting-1.parelmeisje.jpg" onclick="openModal();currentSlide(1)" data-aos="zoom-in" alt="Painting from the Rijksmuseum with the name: Girl with a Pearl Earring.">
+                </li>
+                <li class="collectionsListItem">
+                    <img src="../img/portret-van-schilder.jpeg" onclick="openModal();currentSlide(1)" data-aos="zoom-in" alt="Portrait of painter who is painting.">
+                </li>
+                <li class="collectionsListItem">
+                    <img src="../img/zelportret-vincent.jpg" onclick="openModal();currentSlide(1)" data-aos="zoom-in" alt="Self-portrait of Vincent van Gogh">
+                </li>
+                <li class="collectionsListItem">
+                    <img src="../img/kerstcollectie-rijksmuseum.jpg" onclick="openModal();currentSlide(1)" data-aos="zoom-in" alt="Self-portrait of mother and son sitting together on a platform.">
+                </li>
+                <li class="collectionsListItem">
+                    <img src="../img/zelfportret-rembrandt.jpg" onclick="openModal();currentSlide(1)" data-aos="zoom-in" alt="Self-portrait by Rembrandt van Rijn">
+                </li>
+                <li class="collectionsListItem">
+                    <img src="../img/zelportret-rijk-iemand.jpg"onclick="openModal();currentSlide(1)" data-aos="zoom-in" alt="Self-portrait Marten Soolmans">
+                </li>
+            </ul>
+        
+        </section>
+
+        <center><video class="hover-shadow" data-aos="zoom-in" data-aos-duration="1500" poster="../img/slider5.jpg" width="1280" height="720" src="../video/tour.mp4" autoplay muted loop></video></center>
+
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+          
+              <div class="mySlides">
+                <div class="numbertext">1 / 5</div>
+                <img src="../img/slider1.jpg" style="width:100%" alt="Original photo of the Night Watch">
+                <p class="imgCaptionSlide">&ldquo;Original photo of the Night Watch&rdquo;</p>
+              </div>
+          
+              <div class="mySlides">
+                <p class="numbertext">2 / 5</p>
+                <img src="../img/slider2.jpg" style="width:100%" alt="Exhibition of a portrait of Rembrandt">
+                <p class="imgCaptionSlide">&ldquo;Exhibition of a portrait of Rembrandt&rdquo;</p>
+              </div>
+          
+              <div class="mySlides">
+                <p class="numbertext">3 / 5</p>
+                <img src="../img/slider3.jpg" style="width:100%" alt="The self-portrait of Rembrandt van Rijn">
+                <p class="imgCaptionSlide">&ldquo;The self-portrait of Rembrandt van Rijn&rdquo;</p>
+              </div>
+          
+              <div class="mySlides">
+                <p class="numbertext">4 / 5</p>
+                <img src="../img/slider4.jpg" style="width:100%" alt="Exhibition of paintings hanging in the Rijksmuseum">
+                <p class="imgCaptionSlide">&ldquo;Exhibition of paintings hanging in the Rijksmuseum&rdquo;</p>
+              </div>
+
+              <div class="mySlides">
+                <p class="numbertext">5 / 5</p>
+                <img src="../img/slider5.jpg" style="width:100%" alt="Aerial view of the museum's exterior">
+                <p class="imgCaptionSlide">&ldquo;Aerial view of the museum's exterior&rdquo;</p>  
+              </div>
+          
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+              
+
+            </div>
+        </div>
+       
+        <section id="scrollGes" class="info">
+            
+            <div data-aos="zoom-in" class="block">
+                <h2 class="infoTitle" class="noselect">History</h2>
+                <p class="noselect">
+                    On November 19, 1798, the government decided to set up a national museum following the French example.
+                    A prestige project to stimulate the love for the country but also to preserve important objects.
+                    On May 31, 1800, this National Art Gallery opened its doors for the first time in Huis Ten Bosch in The Hague.
+                    With over 200 paintings and historical objects,
+                    partly from the stadholder's collections and partly from (discontinued) national institutions, such as the VOC.
+                    The first purchase, De Zwaan by Jan Asselijn.
+                    cost 100 guilders and is still one of the highlights of the Rijksmuseum.
+                    Today we have become one of the most famous museums in all of Europe.
+                    <a class="bronGes" href="https://en.wikipedia.org/wiki/Rijksmuseum">Source</a>
+                </p> 
+
+            </div>
+
+            <div data-aos="zoom-in" class="block">
+                <h2 class="infoTitle" class="noselect">About us</h2>
+                <p class="noselect">
+                    The Rijksmuseum is the museum of the Netherlands.
+                    We tell the story of 800 years of Dutch history from 1200 to the present.
+                    In addition, we organize several exhibitions a year from our own collection and with (inter)national loans.
+                    In the Rijksmuseum you get to know the greatest works of art down to the smallest detail. You can also know everything about ourselves.
+                    Why do we do what we do? And how sustainable are we working?
+                    About 750 people work behind and in front of the scenes from all kinds of different backgrounds and functions.
+                    From restoration to security and from marketing to the Information Desk.
+                    The management is in the hands of a three-person management and the Supervisory Board. You will meet this one here.
+                </p> 
+            </div>
+
+        </section>
+
+        <br class="noselect">
+        <br class="noselect">
+        
+        <p class="reviewTitle">Reviews</p>
+
+        <div id="reviewsscroll">
+          <div data-aos="zoom-in" data-aos-duration="1000" class="review1">
+            <p class="noselect" >&ldquo;It is wonderful that you can view many paintings in the Rijksmuseum by painters we have had in the past.&rdquo;<br>
+            </p>
+            <p  data-aos="zoom-in" data-aos-duration="1000" class= "reviewName" class="noselect">- Jaap Steen</p>
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="1000" class="review2">
+            <p class="noselect" >&ldquo;Rijksmuseum with exhibition about Rembrandt. Hadn't been here after the refurbishment. Turned out very beautiful. Exhibition was also interesting.&rdquo;<br>
+            </p>
+            <p  data-aos="zoom-in" data-aos-duration="1000" class= "reviewName" class="noselect">- Bionda Dunnewijk</p>
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="1000" class="review3">
+            <p class="noselect" >&ldquo;Varied, fun guidance, beautiful, and authentic!&rdquo;<br>
+            </p>
+            <p  data-aos="zoom-in" data-aos-duration="1000" class= "reviewName" class="noselect">- Jacobien Visser</p>
+          </div>
+          <div data-aos="zoom-in" data-aos-duration="1000" class="review4">
+            <p class="noselect" >&ldquo;The Rijksmuseum is a must for super fun art, top museum.&rdquo;<br>
+            </p>
+            <p  data-aos="zoom-in" data-aos-duration="1000" class= "reviewName" class="noselect">- Barbara Anderson</p>
+          </div>
+          <br class="noselect">
+        </div>
+
+        <div class="myInput" id="input">
+            <input type="text" id="myInput" autocomplete="off"> 
+            <input type="button" value="ENTER" onclick="getInput()">
+            <button class="jaapiebutton" id="js--map">
+                BACK
+            </button>
+        </div>
+    
+        <div class="mytitle" id="MyTitle">Titel</div>
+    
+        <div class="container" id="container">
+            
+            <img class="myImage" id="MyImage" src="../img/0.png" height="450px" width="700px" alt="foto tentoonstelling">
+            <div id="MyInteraction">
+                
+            </div>
+        </div>    
+           
+
+
+        </main>
+
+        <footer class="footer">
+            
+            <ul class="footerNav" class="noselect">
+                <li class="footerNavItem">
+                    <a href="#headernl">Home</a>
+                </li>
+                <li class="footerNavItem">
+                    <a href="#scrollGes">History</a>
+                </li>
+                <li class="footerNavItem">
+                    <a href="https://www.rijksmuseum.nl/en/login">Login</a>
+                </li>
+                <li class="footerNavItem">
+                    <a href="#reviewscroll">Reviews</a>
+                </li>
+            </ul>
+
+            <ul class="openHours">
+                <li class="openHoursTime1">Visiting hours:</li>
+                <li class="openHoursTime2">from Monday till Sunday</li>
+                <li  class="openHoursTime2">09:00 till 17:00 EU time</li>
+            </ul>
+
+            <address>
+                <li class="openHoursTime1">Address:</li>
+                <li class="openHoursTime2">Museumstraat 1,</li>
+                <li class="openHoursTime2">1071 XX Amsterdam</li>
+            </address>
+
+        </footer>
+
+    </body>
+
+</html>
