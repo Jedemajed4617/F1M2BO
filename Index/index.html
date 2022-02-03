@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rijksmuseum Online</title>
+    <link rel="stylesheet" href="../style/style.css">
+    <link rel="icon" type="image/x-icon" href="../img/icon.jpg">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+
+<header>
+    <nav class="topnav">
+        <a href="http://127.0.0.1:5500/Index/index.html" alt="Home knop om terug te navigeren naar het hoofdscherm" >Home</a>
+        <a href="https://www.rijksmuseum.nl/en/tickets/articles" alt="Tickets Knop om doorgestuurd te worden naar tickets kopen." >Tickets</a>
+        <a href="https://www.rijksmuseum.nl/nl/over-ons" alt="Over ons knop om je door te sturen naar een pagina die informatie geeft over het museum" >About</a>
+        <a href="https://www.rijksmuseum.nl/nl/over-ons/wat-we-doen/geschiedenis" alt="Geschiedenis knop om je door te sturen naar een andere pagina die je informatie geeft over de geschiedenis van het Rijksmuseum" >History</a>
+        <a href="https://www.zoover.nl/nederland/noord-holland/amsterdam/rijksmuseum" alt="Knop om reacties van mensen te beluisteren over ons museum" >Reviews</a>
+        <a href="https://www.rijksmuseum.nl/nl/inloggen?redirectUrl=https://www.rijksmuseum.nl/nl" alt="Knop om in te loggen op de website" >Login</a>
+    </nav>
+</header>
+
+<body>
+    <article>
+        
+        <div class="row">
+            <div class="column">
+              <img src="../img/slider1.jpg" id="styleofbfoto" onclick="openModal();currentSlide(1)" class="hover-shadow" data-aos="zoom-in" data-aos-duration="1500" alt="Orginele foto van de Nachtwacht">
+              <p>Orginele foto van de Nachtwacht</p> 
+            </div>
+            <div class="column">
+              <img src="../img/slider2.jpg" id="styleofbfoto" onclick="openModal();currentSlide(2)" class="hover-shadow" data-aos="zoom-in" data-aos-duration="1500" alt="Tentoonstelling van een protret van Rembrandt">
+              <p>Tentoonstelling van een protret van Rembrandt</p>
+            </div>
+            <div class="column">
+              <img src="../img/slider3.jpg" id="styleofbfoto" onclick="openModal();currentSlide(3)" class="hover-shadow" data-aos="zoom-in" data-aos-duration="1500" alt="Het zelfportret van Rembrandt van Rijn">
+              <p>Het zelfportret van Rembrandt van Rijn</p>
+            </div>
+        
+        <div id="myModal" class="modal">
+            <span class="close cursor" onclick="closeModal()">&times;</span>
+            <div class="modal-content">
+          
+              <div class="mySlides">
+                <div class="numbertext">1 / 5</div>
+                <img src="../img/slider1.jpg" style="width:100%" alt="Orginele foto van de Nachtwacht">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">2 / 5</div>
+                <img src="../img/slider2.jpg" style="width:100%" alt="Tentoonstelling van een protret van Rembrandt">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">3 / 5</div>
+                <img src="../img/slider3.jpg" style="width:100%" alt="Het zelfportret van Rembrandt van Rijn">
+              </div>
+          
+              <div class="mySlides">
+                <div class="numbertext">4 / 5</div>
+                <img src="../img/slider4.jpg" style="width:100%" alt="Tentoonstelling van schilderijen die hangen in het Rijksmuseum">
+              </div>
+
+              <div class="mySlides">
+                <div class="numbertext">5 / 5</div>
+                <img src="../img/slider5.jpg" style="width:100%" alt="Luchtfoto van de buitenkant van het museum">
+              </div>
+          
+              <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+              <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          
+              <div class="caption-container">
+                <p id="caption"></p>
+              </div>
+          
+              <div class="column">
+                <img class="demo" src="../img/slider1.jpg" onclick="currentSlide(1)" alt="Orginele foto van de Nachtwacht">
+              </div>
+          
+              <div class="column">
+                <img class="demo" src="../img/slider2.jpg" onclick="currentSlide(2)" alt="Tentoonstelling van een portret van Rembrandt">
+              </div>
+          
+              <div class="column">
+                <img class="demo" src="../img/slider3.jpg" onclick="currentSlide(3)" alt="Het zelfportret van Rembrandt van Rijn">
+              </div>
+          
+              <div class="column">
+                <img class="demo" src="../img/slider4.jpg" onclick="currentSlide(4)" alt="Tentoonstelling van schilderijen die hangen in het Rijksmuseum">
+              </div>
+
+              <div class="column">
+                <img class="demo" src="../img/slider5.jpg" onclick="currentSlide(5)" alt="Luchtfoto van de buitenkant van het museum">
+              </div>
+
+            </div>
+        </div>
+        
+        <script>
+            function openModal() {
+              document.getElementById("myModal").style.display = "block";
+            }
+            
+            function closeModal() {
+              document.getElementById("myModal").style.display = "none";
+            }
+            
+            var slideIndex = 1;
+            showSlides(slideIndex);
+            
+            function plusSlides(n) {
+              showSlides(slideIndex += n);
+            }
+            
+            function currentSlide(n) {
+              showSlides(slideIndex = n);
+            }
+            
+            function showSlides(n) {
+              var i;
+              var slides = document.getElementsByClassName("mySlides");
+              var dots = document.getElementsByClassName("demo");
+              var captionText = document.getElementById("caption");
+              if (n > slides.length) {slideIndex = 1}
+              if (n < 1) {slideIndex = slides.length}
+              for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+              }
+              for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+              }
+              slides[slideIndex-1].style.display = "block";
+              dots[slideIndex-1].className += " active";
+              captionText.innerHTML = dots[slideIndex-1].alt;
+            }
+
+                AOS.init();
+            
+        </script>
+
+        <video poster="../img/poster.jpg" width="900" height="600" src="../video/tour.mp4" autoplay muted loop></video>
+
+        <p id="geschiedenis">
+
+          Op 19 november 1798, besloot de regering naar Frans voorbeeld een nationaal museum op te richten.
+          Een prestigeproject om de liefde voor het land aan te wakkeren maar ook om belangrijke voorwerpen te bewaren. 
+          Op 31 mei 1800 opende deze Nationale Kunstgalerij voor het eerst zijn deuren in Huis Ten Bosch in Den Haag. 
+          Met ruim 200 schilderijen en historische voorwerpen, 
+          deels uit de stadhouderlijke collecties en deels uit (opgeheven) landelijke instellingen, 
+          zoals de VOC. De eerste aankoop, 
+          De Zwaan van Jan Asselijn, 
+          kostte 100 gulden en is nog steeds een van de topstukken van het Rijksmuseum.
+          Dit was een klein stukje van de geschiedenis als je dit interesant vond kan je ook naar de dan kan je ook meer lezen
+
+        </p> 
+
+
+
+    </article>
+
+   
+
+
+    <footer >
+      <div class="Contact">
+          <div class="AdressLam">
+            <h3>Adress van het Rijksmuseum</h3>
+            <p>Museumstraat 1,</p>
+            <p>1071 XX Amsterdam</p>
+            <br>
+          </div>
+          <div class="Adresspostbus">
+              <h3>Postbus</h3>
+            <p>Postbus 74888</p>
+            <p>1070 DN Amsterdam</p>
+            <br>
+          </div>
+          <div class="Telefoonnummer">
+            <h3>Telefoonnummer:</h3>
+            <p>020 674 7000</p>
+            <br>
+          </div>
+      </div>
+      <div class="Sociaals">
+          <h2>Sociaal media </h2>
+          <div class="Facebook">
+            <p>Facebook:</p>
+            <a href="https://www.facebook.com/rijksmuseum/">Rijksmuseum</a>
+          </div>
+          <div class="Youtube">
+            <p>Youtube:</p>
+            <a href="https://www.youtube.com/channel/UCEXuPfYt1M3e8DT1LDeSfVg">Youtube</a>
+          </div>
+          <div class="linkedin">
+              <p>Linked in :</p>
+              <a href="https://nl.linkedin.com/company/rijksmuseum">Rijksmuseum LinkedIn</a>
+            </div>
+      </div>
+    <br>
+    <div class="Directnaar">
+      <h3>Direct naar:</h3>
+      <a href="http://127.0.0.1:5500/Index/index.html">Home</a><br>
+      <a href="https://www.rijksmuseum.nl/en/tickets/articles">Tickets</a><br>
+      <a href="https://www.rijksmuseum.nl/nl/over-ons/wat-we-doen/geschiedenis">History</a><br>
+      <a href="https://www.zoover.nl/nederland/noord-holland/amsterdam/rijksmuseum">Reviews</a><br>
+      <a href="https://www.rijksmuseum.nl/nl/over-ons">About</a><br>
+      <div class="Emailadress">
+        <h3>Emailadress:</h3>
+        <p>info@rijksmuseum.nl</p>
+      </div>
+      <div class="Emailadress">
+        <h3>Openingstijden:</h3>
+        <p>Ma t/m Zo van 09:00 t/m 17:00</p>
+      </div>
+  
+    </div>
+    <br>
+    <div class="infolam">
+      <h3>Over het Rijksmuseum:</h3>
+      <a href="https://www.rijksmuseum.nl/nl/rijksstudio/kunstenaars">Kunstenaars</a><br>
+      <a href="https://www.youtube.com/channel/UCEXuPfYt1M3e8DT1LDeSfVg">Video's</a><br>
+      <a href="https://www.rijksmuseum.nl/nl/zien-en-doen/cursussen/veelgestelde-vragen">Veelgestelde vragen</a><br>
+      <a href="https://www.rijksmuseum.nl/nl/werken-bij">Vacatures</a><br>
+      <a href="https://www.rijksmuseum.nl/nl/pers">Pers</a><br>
+      <a href="https://www.rijksmuseum.nl/nl/inloggen">Login</a>
+    </div> 
+  </footer>
+</body>
+</html>
